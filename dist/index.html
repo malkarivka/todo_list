@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Todo Lists</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <div id="sidebar">
+      <ul>
+        <li><a href="#" id="new_project">+New Project</a></li>
+      </ul>
+    </div>
+    <div id="header">
+      <h1>To Do Lists</h1>
+    </div>
+    <div id="current_list">
+      <h3>New Project</h3>
+      <small id="edit">&#128394;</small><small id="delete">&#x1F5D1;</small>
+      <table></table>
+      <a href="#" id="new_todo">Add item</a>
+    </div>
+    <div id="footer">
+      <small>Created by <a href="https://github.com/malkarivka">Malka Rivka Atkins</a></small>
+    </div>
+    <div id="modal">
+      <form>
+        <!-- <span id="close">&times;</span> -->
+        <div>
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title">
+        </div>
+        <div>
+          <label for="description">Description:</label>
+          <input type="text" id="description" name="description">
+        </div>
+        <div>
+          <label for="dueDate">Due date:</label>
+          <input type="text" id="dueDate" name="dueDate">
+        </div>
+        <div class="">
+          <label for="dueDate">Priority:</label>
+          <select id="priority" name="priority">
+            <option value="low">low</option>
+            <option value="medium">medium</option>
+            <option value="high">high</option>
+          </select>
+        </div>
+        <button id="submit" type="button" name="button">Submit</button>
+        <!-- <button id="submit" type="submit" name="" value="Submit"> -->
+        <span id="close">&times;</span>
+      </form>
+    </div>
+    <script src="bundle.js"></script>
+  </body>
+</html>

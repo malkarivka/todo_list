@@ -1,0 +1,113 @@
+body {
+  background-color: linen;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 75px 1fr 25px;
+}
+
+#sidebar {
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+  background-color: white;
+  height: 100vh;
+  overflow: auto; /* needed? */
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: inline-flex;
+  flex-direction: column;
+  max-width: 225px;
+}
+
+li {
+  padding: 10px 0;
+  width: auto;
+  text-align: left;
+  border-bottom: .5px gainsboro solid;
+  cursor: pointer;
+}
+
+li:last-child {
+  background-color: snow;
+  border: cornflowerblue 1.5px solid;
+  border-radius: 15px;
+  padding: 3px;
+  width: 90px;
+  text-align: center;
+  margin: 10px 0 0 auto;
+}
+
+li a {
+  text-decoration: none;
+  color: black;
+}
+
+h1 {
+  text-align: center;
+}
+
+#current_list {
+  background-color: white;
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  overflow: auto; /* needed? */
+}
+
+h3 {
+  display: inline-block;
+}
+
+#edit, #delete {
+  cursor: pointer;
+  padding-right: 6px;
+}
+
+#footer small {
+  margin-left: 5%;
+}
+
+#modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+#modal form {
+  display: flex;
+  background-color: #fefefe;
+  border: 1px solid #888;
+  padding: 10px;
+}
+
+label {
+  display: block;
+}
+
+#close {
+  color: #aaa;
+  /* float: right; */
+  font-size: 28px;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+#close:hover,
+#close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
