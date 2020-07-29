@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open --config webpack.config.js --content-base dist",
+    "build": "webpack --config webpack.config.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "webpack-dev-server": "^3.11.0"
   }
 }
