@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Todo Lists</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="materialize.min.css"  media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div id="sidebar">
@@ -18,14 +21,13 @@
       <h3>New Project</h3>
       <small id="edit">&#128394;</small><small id="delete">&#x1F5D1;</small>
       <table></table>
-      <a href="#" id="new_todo">Add item</a>
+      <a href="#modal" class="modal-trigger" id="new_todo">Add item</a>
     </div>
     <div id="footer">
       <small>Created by <a href="https://github.com/malkarivka">Malka Rivka Atkins</a></small>
     </div>
-    <div id="modal">
+    <div id="modal" class="modal">
       <form>
-        <!-- <span id="close">&times;</span> -->
         <div>
           <label for="title">Title:</label>
           <input type="text" id="title" name="title">
@@ -48,7 +50,7 @@
         </div>
         <button id="submit" type="button" name="button">Submit</button>
         <!-- <button id="submit" type="submit" name="" value="Submit"> -->
-        <span id="close">&times;</span>
+        <span class="modal-close">&times;</span>
       </form>
     </div>
     <script src="bundle.js"></script>

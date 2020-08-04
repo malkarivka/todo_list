@@ -1,4 +1,15 @@
+import M from "./materialize.min.js";
 import domManipulation from './dom_manipulation.js';
+
+document.addEventListener("DOMContentLoaded", function () {
+  var elems = document.querySelectorAll(".modal");
+  var instances = M.Modal.init(elems);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  var elems = document.querySelectorAll("select");
+  var instances = M.FormSelect.init(elems);
+});
 
 class Todo {
   constructor(title, description, dueDate, priority) {
@@ -57,7 +68,7 @@ document.getElementById('new_project').addEventListener('click', Project.create)
 document.getElementById('new_todo').addEventListener('click', function() {
   domManipulation.renderTodoForm(currentProject);
   document.getElementById('submit').onclick = function() {
-    document.getElementById('modal').style.display = 'none';
+    M.Modal.getInstance(document.querySelectorAll(".modal")[0]).close();
     let title = document.getElementById('title').value;
     let description = document.getElementById('description').value;
     let dueDate = document.getElementById('dueDate').value;

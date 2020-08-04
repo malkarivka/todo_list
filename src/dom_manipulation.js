@@ -67,7 +67,7 @@ const domManipulation = (() => {
     row.insertCell(3).innerHTML = `${todo.dueDate}`;
     row.insertCell(4).innerHTML = `${todo.priority}`;
     let editTodo = row.insertCell(5);
-    editTodo.innerHTML = `<a href="#">edit</a>`;
+    editTodo.innerHTML = `<a href="#modal" class="modal-trigger">edit</a>`;
     editTodo.addEventListener('click', function() {
       renderEditForm(todo, project);
     });
@@ -85,25 +85,15 @@ const domManipulation = (() => {
     for (var i = 0; i < properties.length; i++) {
       document.getElementById(properties[i]).value = '';
     }
-    var modal = document.getElementById('modal');
-    var span = document.getElementById('close');
-    modal.style.display = 'flex';
-    span.onclick = function() {
-      modal.style.display = 'none';
-      for (var i = 0; i < properties.length; i++) {
-        document.getElementById(properties[i]).value = '';
-      }
-    };
   };
 
   const renderEditForm = (todo, project) => {
-    renderTodoForm(project);
     document.getElementById('title').value = todo.title;
     document.getElementById('description').value = todo.description;
     document.getElementById('dueDate').value = todo.dueDate;
     document.getElementById('priority').value = todo.priority;
     document.getElementById('submit').onclick = function() {
-      document.getElementById('modal').style.display = 'none';
+      M.Modal.getInstance(document.querySelectorAll(".modal")[0]).close();
       todo.title = document.getElementById('title').value;
       todo.description = document.getElementById('description').value;
       todo.dueDate = document.getElementById('dueDate').value;
