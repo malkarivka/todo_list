@@ -7,10 +7,9 @@ const domManipulation = (() => {
   };
 
   const addProject = (project) => {
-    let list = document.getElementsByTagName('ul')[0];
+    let list = document.getElementById('slide-out');
     let li = document.createElement('li');
-    li.innerHTML = project.title;
-    li.setAttribute('data', `${project.id}`);
+    li.innerHTML = `<a href="#" data="${project.id}" class="sidenav-close">New Project</a>`;
     li.addEventListener('click', function() { renderList(project); });
     list.insertBefore(li, document.getElementById('new_project').parentNode);
     return li;
@@ -36,7 +35,7 @@ const domManipulation = (() => {
       if (new_title != null) {
         project.title = new_title
         h3.innerHTML = project.title;
-        document.querySelectorAll(`li[data='${project.id}']`)[0].innerHTML = project.title;
+        document.querySelectorAll(`a[data='${project.id}']`)[0].innerHTML = project.title;
       };
     });
   };

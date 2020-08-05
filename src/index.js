@@ -2,13 +2,9 @@ import M from "./materialize.min.js";
 import domManipulation from './dom_manipulation.js';
 
 document.addEventListener("DOMContentLoaded", function () {
-  var elems = document.querySelectorAll(".modal");
-  var instances = M.Modal.init(elems);
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  var elems = document.querySelectorAll("select");
-  var instances = M.FormSelect.init(elems);
+  M.Modal.init(document.querySelectorAll(".modal"));
+  M.FormSelect.init(document.querySelectorAll("select"));
+  M.Sidenav.init(document.querySelectorAll(".sidenav"));
 });
 
 class Todo {
