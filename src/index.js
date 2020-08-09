@@ -8,11 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 class Item {
-  constructor(title, description, dueDate, priority) {
+  constructor(title, description, dueDate) {
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
-    this.priority = priority;
     this.complete = false;
     // localStorage.setItem('lists', JSON.stringify(lists));
     // this.tr = (domManipulation.renderitem(this));
@@ -68,8 +67,7 @@ document.getElementById('new_item').addEventListener('click', function() {
     let title = document.getElementById('title').value;
     let description = document.getElementById('description').value;
     let dueDate = document.getElementById('dueDate').value;
-    let priority = document.getElementById('priority').value;
-    let newItem = new Item(title, description, dueDate, priority);
+    let newItem = new Item(title, description, dueDate);
     currentlist.items.push(newItem);
     domManipulation.renderitem(newItem, currentlist);
   };

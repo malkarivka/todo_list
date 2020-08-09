@@ -64,13 +64,12 @@ const domManipulation = (() => {
     row.insertCell(1).innerHTML = `${item.title}`;
     row.insertCell(2).innerHTML = `${item.description}`;
     row.insertCell(3).innerHTML = `${item.dueDate}`;
-    row.insertCell(4).innerHTML = `${item.priority}`;
-    let edititem = row.insertCell(5);
+    let edititem = row.insertCell(4);
     edititem.innerHTML = `<a href="#modal" class="modal-trigger">edit</a>`;
     edititem.addEventListener('click', function() {
       renderEditForm(item, list);
     });
-    let deleteitem = row.insertCell(6);
+    let deleteitem = row.insertCell(5);
     deleteitem.innerHTML = `<a href="#">&#x1F5D1;</a>`;
     deleteitem.addEventListener('click', function() {
       if (confirm('Do you want to delete this item item?') == true) {
@@ -80,7 +79,7 @@ const domManipulation = (() => {
   };
 
   const renderitemForm = (list) => {
-    let properties = ['title', 'description', 'dueDate', 'priority']
+    let properties = ['title', 'description', 'dueDate']
     for (var i = 0; i < properties.length; i++) {
       document.getElementById(properties[i]).value = '';
     }
@@ -90,13 +89,11 @@ const domManipulation = (() => {
     document.getElementById('title').value = item.title;
     document.getElementById('description').value = item.description;
     document.getElementById('dueDate').value = item.dueDate;
-    document.getElementById('priority').value = item.priority;
     document.getElementById('submit').onclick = function() {
       M.Modal.getInstance(document.querySelectorAll(".modal")[0]).close();
       item.title = document.getElementById('title').value;
       item.description = document.getElementById('description').value;
       item.dueDate = document.getElementById('dueDate').value;
-      item.priority = document.getElementById('priority').value;
       domManipulation.renderitem(item, list, item.row.rowIndex);
       document.getElementsByTagName('table')[0].deleteRow(item.row.rowIndex + 1);
     };
