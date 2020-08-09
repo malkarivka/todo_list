@@ -70,7 +70,7 @@ const domManipulation = (() => {
       renderEditForm(item, list);
     });
     let deleteitem = row.insertCell(5);
-    deleteitem.innerHTML = `<a href="#">&#x1F5D1;</a>`;
+    deleteitem.innerHTML = `<a href="#"><i class="material-icons">delete</i></a>`;
     deleteitem.addEventListener('click', function() {
       if (confirm('Do you want to delete this item item?') == true) {
         item.delete(list);
