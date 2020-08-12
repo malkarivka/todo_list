@@ -1,24 +1,11 @@
-body {
-  background-color: linen;
-  margin: 0;
-}
-
-#header, #current_list, #footer {
+#current_list, footer {
   padding-left: 300px;
 }
 
 @media only screen and (max-width : 992px) {
-  #header, #current_list, #footer {
+  #header, #current_list, footer {
     padding-left: 0;
   }
-}
-
-h1 {
-  text-align: center;
-}
-
-#current_list {
-  background-color: white;
 }
 
 h3 {
@@ -27,13 +14,23 @@ h3 {
 
 #edit, #delete {
   cursor: pointer;
-  padding-right: 6px;
 }
 
-#footer small {
-  margin-left: 5%;
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-label {
-  display: block;
+main {
+  flex: 1 0 auto;
+}
+
+footer img {
+  height: 20px;
+  display: inline;
+}
+
+footer a {
+  display: flex;
 }
